@@ -176,37 +176,37 @@ client.on( Events.InteractionCreate, async (interaction) =>{
       {
         label: "Departamento de Eventos", 
         value: "eventos", 
-        description: lorem
+        description: ticketsMessages.deployDescriptionSelection.eventsDescription
       },
       {
         label: "Departamento de Entrenamiento / Examenes", 
         value: "entrenamiento", 
-        description: lorem
+        description: ticketsMessages.deployDescriptionSelection.TrainingDescription
       },
       {
         label: "Informe / Reporte de Miembros", 
         value: "miembros", 
-        description: lorem
+        description: ticketsMessages.deployDescriptionSelection.MemebershipDescription
       },
       {
         label: "Operaciones (Militares, ATC y Vuelo)", 
         value: "operaciones", 
-        description: lorem
+        description: ticketsMessages.deployDescriptionSelection.operationDescription
       },
       {
         label: "Relaciones Publicas", 
         value: "relaciones publicas", 
-        description: lorem
+        description: ticketsMessages.deployDescriptionSelection.publicRelationsDescription
       },
       {
         label: "Departamento web", 
         value: "web", 
-        description: lorem
+        description: ticketsMessages.deployDescriptionSelection.webDescription
       },
       {
         label: "FIR(s) team", 
         value: "fir", 
-        description: lorem
+        description: ticketsMessages.deployDescriptionSelection.firDescription
       },
     ]
   });
@@ -248,8 +248,8 @@ client.on( Events.InteractionCreate, async (interaction) =>{
       case 'miembros':
         createChannelTicket("Informe / Reporte de Miembros", getRoles[37].id);
         break;
-      case 'operaciones':
-        createChannelTicket("Operaciones (Militares, ATC y Vuelo)");
+      case 'operaciones': // No funciona al 100% (toca crear un unico rango para OP)
+        createChannelTicket("Operaciones (Militares, ATC y Vuelo)", getRoles[10].id);
         break;
       case 'relaciones publicas':
         createChannelTicket("Relaciones Publicas", getRoles[30].id);
@@ -288,7 +288,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
         let airport = interaction.options.getString("aeropuerto");
         let time = interaction.options.getString("hora");
         let day = interaction.options.getString("dia");
-        
+
       try {
         const canvas = Canvas.createCanvas(1920, 1200);
         const context = canvas.getContext('2d');

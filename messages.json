@@ -9,8 +9,12 @@
         "descriptionTicket" : "**¿Alguna duda?**\n Abre un ticket, llena la informacion solicitada y espera que algun staff te contacte! :)\n Recuerda que abrir un ticket innecesariamente con lleva una falta y esta misma sera castigada",     
         "deployDescriptionSelection":{
             "eventsDescription": "Tours y Eventos",
-            "TrainingDescription": "Examenes y entrenamientos",
-            "memebershipDescription": "Examenes y entrenamientos"
+            "operationDescription": "Operativos",
+            "TrainingDescription": "Exámenes y entrenamientos",
+            "MemebershipDescription": "Departamento de Membresía",
+            "publicRelationsDescription": "Relaciones publicas",
+            "webDescription": "Examenes y entrenamientos",
+            "firDescription": "Fir(s)"
         },
         "descriptionResponseTicket": "Dentro de muy poco alguno de nuestro equipo de staff se pondra en contacto con usted"
     },
