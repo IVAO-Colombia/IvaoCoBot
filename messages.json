@@ -15,10 +15,10 @@
         "descriptionResponseTicket": "Dentro de muy poco alguno de nuestro equipo de staff se pondra en contacto con usted"
     },
     "publicRelations": {
-        "channelDescription" : "En que canal quiere enviar el anuncio?",
-        "timeDescription": "A que horas se realizara el entrenamiento / examen? ej: (XXXXHLC)",
-        "AirportDescription": "En que Aeropuerto se realizara el entrenamiento / examen? ej: (XXXX_XXX)",
-        "DayDescription": "En que día se realizara el entrenamiento / examen? ej: (dd/mm/aaaa)"
+        "channelDescription" : "¿En qué canal quiere enviar el anuncio?",
+        "timeDescription": "¿A qué hora se realizará el entrenamiento/examen? e.g. (XXXXHLC o XXXXUTC)",
+        "AirportDescription": "¿En qué dependencia se realizará el entrenamiento/examen? e.g. (XXXX_XXX)",
+        "DayDescription": "En qué fecha se realizará el entrenamiento/examen? e.g. (dd/mm/aaaa)"
     }
 
 }
