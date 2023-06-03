@@ -1,0 +1,24 @@
+{
+    "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "errorInteraction": "Ha ocurrido un error!, realiza una <#755905727519785063> y contacta a nuestro equipo <@&591316424367013904>",
+    "commandsDescriptrion": {
+        "installTickets" : "Se instalaran todos los recursos necesarios para el uso del sistema de tickets",
+        "newTraining": "Se creara una imagen con los datos solicitados y se publicara el anuncio (Uso Unico PR)"
+    },
+    "ticketsMessages": {
+        "descriptionTicket" : "**¿Alguna duda?**\n Abre un ticket, llena la informacion solicitada y espera que algun staff te contacte! :)\n Recuerda que abrir un ticket innecesariamente con lleva una falta y esta misma sera castigada",     
+        "deployDescriptionSelection":{
+            "eventsDescription": "Tours y Eventos",
+            "TrainingDescription": "Examenes y entrenamientos",
+            "memebershipDescription": "Examenes y entrenamientos"
+        },
+        "descriptionResponseTicket": "Dentro de muy poco alguno de nuestro equipo de staff se pondra en contacto con usted"
+    },
+    "publicRelations": {
+        "channelDescription" : "En que canal quiere enviar el anuncio?",
+        "timeDescription": "A que horas se realizara el entrenamiento / examen? ej: (XXXXHLC)",
+        "AirportDescription": "En que Aeropuerto se realizara el entrenamiento / examen? ej: (XXXX_XXX)",
+        "DayDescription": "En que día se realizara el entrenamiento / examen? ej: (dd/mm/aaaa)"
+    }
+
+}
