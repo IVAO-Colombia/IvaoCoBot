@@ -61,8 +61,8 @@ for (const file of commandFiles) {
 client.once(Events.ClientReady, async (bot) => {
   console.log(`${bot.user.tag} se encuentra listo!`);
   client.user.setPresence({
-    activities: [{ name: "Creando la v2" }],
-    status: "dnd",
+    activities: [{ name: "co.ivao.aero" }],
+    status: "online",
   });
 });
 
