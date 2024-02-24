@@ -287,7 +287,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     ticketChannelEnd
       .delete()
       .then((deleteChannel) => {
-        interaction.user.send(lorem);
+        interaction.user.send(ticketsMessages.lastMessage);
       })
       .catch(console.error);
   }

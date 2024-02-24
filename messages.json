@@ -6,6 +6,7 @@
     "newTraining": "Se creara una imagen con los datos solicitados y se publicara el anuncio (Uso Unico PR)"
   },
   "ticketsMessages": {
+    "lastMessage": "Esperamos que sus dudas hayan sido resueltas, en caso contrario puede comunicarse con co-hq@ivao.aero",
     "descriptionTicket": "**¿Alguna duda?**\n Abre un ticket, llena la informacion solicitada y espera que algun staff te contacte! :)\n Recuerda que abrir un ticket innecesariamente con lleva una falta y esta misma sera castigada",
     "deployDescriptionSelection": {
       "eventsDescription": "Tours y Eventos",
