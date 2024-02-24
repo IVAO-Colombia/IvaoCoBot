@@ -64,8 +64,8 @@ client.once(Events.ClientReady, async (bot) => {
   client.user.setPresence({
     activities: [{ name: "co.ivao.aero" }],
     status: "online",
+    activities: ActivityType.Watching,
   });
-  client.user.setActivity("activity", { type: ActivityType.Watching });
 });
 
 client.on(Events.InteractionCreate, async (interaction) => {
