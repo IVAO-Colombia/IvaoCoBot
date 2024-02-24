@@ -62,10 +62,9 @@ for (const file of commandFiles) {
 client.once(Events.ClientReady, async (bot) => {
   console.log(`${bot.user.tag} se encuentra listo!`);
   client.user.setPresence({
-    activities: [{ name: "co.ivao.aero" }],
     status: "online",
-    activities: ActivityType.Watching,
   });
+  client.user.setActivity("co.ivao.aero", { type: ActivityType.Watching });
 });
 
 client.on(Events.InteractionCreate, async (interaction) => {
