@@ -1,28 +1,27 @@
 {
-    "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "errorInteraction": "Ha ocurrido un error!, realiza una <#755905727519785063> y contacta a nuestro equipo <@&591316424367013904>",
-    "commandsDescriptrion": {
-        "installTickets" : "Se instalaran todos los recursos necesarios para el uso del sistema de tickets",
-        "newTraining": "Se creara una imagen con los datos solicitados y se publicara el anuncio (Uso Unico PR)"
+  "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "errorInteraction": "Ha ocurrido un error!, realiza una <#755905727519785063> y contacta a nuestro equipo <@&591316424367013904>",
+  "commandsDescriptrion": {
+    "installTickets": "Se instalaran todos los recursos necesarios para el uso del sistema de tickets",
+    "newTraining": "Se creara una imagen con los datos solicitados y se publicara el anuncio (Uso Unico PR)"
+  },
+  "ticketsMessages": {
+    "descriptionTicket": "**¿Alguna duda?**\n Abre un ticket, llena la informacion solicitada y espera que algun staff te contacte! :)\n Recuerda que abrir un ticket innecesariamente con lleva una falta y esta misma sera castigada",
+    "deployDescriptionSelection": {
+      "eventsDescription": "Tours y Eventos",
+      "operationDescription": "Operativos",
+      "TrainingDescription": "Exámenes y entrenamientos",
+      "MemebershipDescription": "Departamento de Membresía",
+      "publicRelationsDescription": "Relaciones publicas",
+      "webDescription": "Errores con la pagina o algún sistema",
+      "firDescription": "Fir(s)"
     },
-    "ticketsMessages": {
-        "descriptionTicket" : "**¿Alguna duda?**\n Abre un ticket, llena la informacion solicitada y espera que algun staff te contacte! :)\n Recuerda que abrir un ticket innecesariamente con lleva una falta y esta misma sera castigada",     
-        "deployDescriptionSelection":{
-            "eventsDescription": "Tours y Eventos",
-            "operationDescription": "Operativos",
-            "TrainingDescription": "Exámenes y entrenamientos",
-            "MemebershipDescription": "Departamento de Membresía",
-            "publicRelationsDescription": "Relaciones publicas",
-            "webDescription": "Examenes y entrenamientos",
-            "firDescription": "Fir(s)"
-        },
-        "descriptionResponseTicket": "Dentro de muy poco alguno de nuestro equipo de staff se pondra en contacto con usted"
-    },
-    "publicRelations": {
-        "channelDescription" : "¿En qué canal quiere enviar el anuncio?",
-        "timeDescription": "¿A qué hora se realizará el entrenamiento/examen? e.g. (XXXXHLC o XXXXUTC)",
-        "AirportDescription": "¿En qué dependencia se realizará el entrenamiento/examen? e.g. (XXXX_XXX)",
-        "DayDescription": "En qué fecha se realizará el entrenamiento/examen? e.g. (dd/mm/aaaa)"
-    }
-
+    "descriptionResponseTicket": "Dentro de muy poco alguno de nuestro equipo de staff se pondra en contacto con usted"
+  },
+  "publicRelations": {
+    "channelDescription": "¿En qué canal quiere enviar el anuncio?",
+    "timeDescription": "¿A qué hora se realizará el entrenamiento/examen? e.g. (XXXXHLC o XXXXUTC)",
+    "AirportDescription": "¿En qué dependencia se realizará el entrenamiento/examen? e.g. (SKCL_TWR / SKBO_APP/)",
+    "DayDescription": "En qué fecha se realizará el entrenamiento/examen? e.g. (dd/mm/aaaa)"
+  }
 }
