@@ -31,6 +31,7 @@ const {
   ActionRow,
   ChannelType,
   AttachmentBuilder,
+  ActivityType,
 } = require("discord.js");
 const { token } = require("./config.json");
 const { log } = require("node:console");
@@ -64,6 +65,7 @@ client.once(Events.ClientReady, async (bot) => {
     activities: [{ name: "co.ivao.aero" }],
     status: "online",
   });
+  client.user.setActivity("activity", { type: ActivityType.Watching });
 });
 
 client.on(Events.InteractionCreate, async (interaction) => {
