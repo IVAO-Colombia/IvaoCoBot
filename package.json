@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "@napi-rs/canvas": "^0.1.41",
     "discord.js": "^14.11.0"
