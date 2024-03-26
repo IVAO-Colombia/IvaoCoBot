@@ -3,7 +3,8 @@
   "errorInteraction": "Ha ocurrido un error!, realiza una <#755905727519785063> y contacta a nuestro equipo <@&591316424367013904>",
   "commandsDescriptrion": {
     "installTickets": "Se instalaran todos los recursos necesarios para el uso del sistema de tickets",
-    "newTraining": "Se creara una imagen con los datos solicitados y se publicara el anuncio (Uso Unico PR)"
+    "newTraining": "Se creara una imagen anunciando con los datos solicitados y se publicara el anuncio (Uso Unico PR)",
+    "newExam": "Se creara una imagen anunciando con los datos solicitados y se publicara el anuncio (Uso Unico PR)"
   },
   "ticketsMessages": {
     "lastMessage": "Esperamos que sus dudas hayan sido resueltas, en caso contrario puede comunicarse con co-hq@ivao.aero",

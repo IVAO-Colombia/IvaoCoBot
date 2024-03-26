@@ -1,0 +1,47 @@
+{
+  "/src/img/training/Ig.png": {
+    "name": "instagram-post",
+    "file": "Ig.png",
+    "font": 72,
+    "xCoord": 350,
+    "aCoord": 750,
+    "dCoord": 950,
+    "tCoord": 1130
+  },
+  "/src/img/training/IgStory.png": {
+    "name": "instagram-story",
+    "file": "IgStory.png",
+    "font": 120,
+    "xCoord": 550,
+    "aCoord": 2200,
+    "dCoord": 2650,
+    "tCoord": 3080
+  },
+  "/src/img/training/Fb.png": {
+    "name": "Facebook",
+    "file": "Fb.png",
+    "font": 54,
+    "xCoord": 384,
+    "aCoord": 630,
+    "dCoord": 780,
+    "tCoord": 950
+  },
+  "/src/img/training/Ds.png": {
+    "name": "DS",
+    "file": "Ds.png",
+    "font": 15,
+    "xCoord": 120,
+    "aCoord": 170,
+    "dCoord": 225,
+    "tCoord": 272
+  },
+  "/src/img/exam/IgStory_xm.png": {
+    "name": "instagram-story",
+    "file": "IgStory_xm.png",
+    "font": 80,
+    "xCoord": 380,
+    "aCoord": 1450,
+    "dCoord": 1770,
+    "tCoord": 2050
+  }
+}

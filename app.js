@@ -15,7 +15,7 @@ GlobalFonts.registerFromPath(
 
 const { ticketsMessages, lorem, errorInteraction } = require("./messages.json");
 const getRoles = require("./rangos.json");
-
+const getImages = require("./images.json");
 //Iniciacion de permisos y requerimientos del bot
 const {
   Client,
@@ -62,7 +62,7 @@ for (const file of commandFiles) {
 client.once(Events.ClientReady, async (bot) => {
   console.log(`${bot.user.tag} se encuentra listo!`);
   client.user.setPresence({
-    status: "online",
+    status: "dnd",
   });
   client.user.setActivity("co.ivao.aero", { type: ActivityType.Watching });
 });
@@ -294,6 +294,55 @@ client.on(Events.InteractionCreate, async (interaction) => {
   }
 });
 
+async function createAdvertisement(type, airport, date, time) {
+  let route;
+  let files = [];
+  // Define the route if is for training or exam
+  switch (type) {
+    case "training":
+      route = "src/img/training/";
+      break;
+    case "exam":
+      route = "src/img/exam/";
+      break;
+  }
+
+  // Search images in folder by extension (.png)
+  const imagePath = path.join(__dirname, route);
+  const commandFiles = fs
+    .readdirSync(imagePath)
+    .filter((file) => file.endsWith(".png"));
+  // Create images for each of the files found
+  for (const file of commandFiles) {
+    let imageConfig;
+    const filePath = path.join(imagePath, file);
+    //Json to array
+    let imageArray = Array.from(Object.values(getImages));
+
+    for (const image of imageArray) {
+      if (image.file == file) {
+        imageConfig = image;
+      }
+    }
+    const background = await Canvas.loadImage(filePath);
+    const canvas = Canvas.createCanvas(background.width, background.height);
+    const context = canvas.getContext("2d");
+    context.drawImage(background, 0, 0, canvas.width, canvas.height);
+    context.font = `${imageConfig.font}px Poppins Medium`;
+    context.fillStyle = "#ffffff";
+    context.fillText(airport, imageConfig.xCoord, imageConfig.aCoord);
+    context.fillText(date, imageConfig.xCoord, imageConfig.dCoord);
+    context.fillText(time, imageConfig.xCoord, imageConfig.tCoord);
+
+    const attachment = new AttachmentBuilder(canvas.toBuffer("image/png"), {
+      name: `anuncio-${airport}-${date}-${time}-${imageConfig.name}.png`,
+    });
+    files.push(attachment);
+  }
+
+  return files;
+}
+
 client.on(Events.InteractionCreate, async (interaction) => {
   if (interaction.commandName == "new-training") {
     let airport = interaction.options.getString("dependencia");
@@ -301,27 +350,35 @@ client.on(Events.InteractionCreate, async (interaction) => {
     let date = interaction.options.getString("fecha");
 
     try {
-      const canvas = Canvas.createCanvas(1920, 1200);
-      const context = canvas.getContext("2d");
-      const background = await Canvas.loadImage(
-        "./src/img/EntrenamientosATC.png"
-      );
+      let images = createAdvertisement("training", airport, date, time);
 
-      context.drawImage(background, 0, 0, canvas.width, canvas.height);
-      context.font = "54px Poppins Medium";
-      context.fillStyle = "#ffffff";
-
-      context.fillText(airport, canvas.width / 5, 650);
-      context.fillText(date, canvas.width / 5, 800);
-      context.fillText(time, canvas.width / 5, 950);
-
-      const attachment = new AttachmentBuilder(canvas.toBuffer("image/png"), {
-        name: `anuncio-${airport}-${date}-${time}.png`,
+      await images.then(function (result) {
+        interaction.reply({
+          content: `**Aeropuerto:** ${airport}\n **Hora:** ${time}\n **Fecha:** ${date}\n **Requerido por:** <@${interaction.user.id}>`,
+          files: result,
+        });
       });
-
+    } catch (error) {
+      console.log(error);
       await interaction.reply({
-        content: `**Aeropuerto:** ${airport}\n **Hora:** ${time}\n **Fecha:** ${date}\n **Requerido por:** <@${interaction.user.id}>`,
-        files: [attachment],
+        content: "Se ha producido un error!. Contacta a WM",
+        ephemeral: true,
+      });
+    }
+  }
+  if (interaction.commandName == "new-exam") {
+    let airport = interaction.options.getString("dependencia");
+    let time = interaction.options.getString("hora");
+    let date = interaction.options.getString("fecha");
+
+    try {
+      let images = createAdvertisement("exam", airport, date, time);
+
+      await images.then(function (result) {
+        interaction.reply({
+          content: `**Aeropuerto:** ${airport}\n **Hora:** ${time}\n **Fecha:** ${date}\n **Requerido por:** <@${interaction.user.id}>`,
+          files: result,
+        });
       });
     } catch (error) {
       console.log(error);
