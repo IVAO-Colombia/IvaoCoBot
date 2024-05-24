@@ -208,6 +208,11 @@ client.on(Events.InteractionCreate, async (interaction) => {
         value: "fir",
         description: ticketsMessages.deployDescriptionSelection.firDescription,
       },
+      {
+        label: "Hq divisional",
+        value: "hq",
+        description: ticketsMessages.deployDescriptionSelection.hqDescription,
+      },
     ],
   });
 
@@ -266,6 +271,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
         break;
       case "fir":
         createChannelTicket("Fir", getRoles[6].id);
+        break;
+      case "hq":
+        createChannelTicket("Hq Divisional", getRoles[25].id);
         break;
       default:
         interaction.reply({
