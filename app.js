@@ -26,9 +26,7 @@ const {
   ActionRowBuilder,
   ButtonBuilder,
   ButtonStyle,
-  PermissionsBitField,
   StringSelectMenuBuilder,
-  ActionRow,
   ChannelType,
   AttachmentBuilder,
   ActivityType,
@@ -120,7 +118,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
     channelTicket = await guild.channels
       .create({
         name: `ticket ${randomValue}`,
-        parent: "1077610261818658893",
+        parent: "1077610259197218926",
         type: ChannelType.GuildText,
         permissionOverwrites: [
           {

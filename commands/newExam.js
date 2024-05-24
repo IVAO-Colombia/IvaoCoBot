@@ -32,5 +32,11 @@ module.exports = {
         .setDescription(publicRelations.DayDescription)
         .setRequired(true)
     ),
-  async execute(interaction) {},
+  async execute(interaction) {
+    if (!interaction.member.roles.cache.has("1077610256890351656")) {
+      return interaction.reply({
+        content: "No tienes autorización para usar este comando.",
+      });
+    }
+  },
 };
