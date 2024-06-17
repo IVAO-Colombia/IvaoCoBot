@@ -9,7 +9,6 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("new-exam")
     .setDescription(commandsDescriptrion.newExam)
-    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
     .addChannelOption((option) =>
       option
         .setName("canal")

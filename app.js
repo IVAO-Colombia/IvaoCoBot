@@ -62,7 +62,9 @@ client.once(Events.ClientReady, async (bot) => {
   client.user.setPresence({
     status: "dnd",
   });
-  client.user.setActivity("co.ivao.aero", { type: ActivityType.Watching });
+  client.user.setActivity("Mantenimiento", {
+    type: ActivityType.Playing,
+  });
 });
 
 client.on(Events.InteractionCreate, async (interaction) => {
@@ -351,6 +353,13 @@ async function createAdvertisement(type, airport, date, time) {
 
 client.on(Events.InteractionCreate, async (interaction) => {
   if (interaction.commandName == "new-training") {
+    if (!interaction.member.roles.cache.has("1077610256890351656")) {
+      return interaction.reply({
+        content: "You don't have permissions!",
+        ephemeral: true,
+      });
+    }
+
     let airport = interaction.options.getString("dependencia");
     let time = interaction.options.getString("hora");
     let date = interaction.options.getString("fecha");
@@ -373,6 +382,12 @@ client.on(Events.InteractionCreate, async (interaction) => {
     }
   }
   if (interaction.commandName == "new-exam") {
+    if (!interaction.member.roles.cache.has("1077610256890351656")) {
+      return interaction.reply({
+        content: "You don't have permissions!",
+        ephemeral: true,
+      });
+    }
     let airport = interaction.options.getString("dependencia");
     let time = interaction.options.getString("hora");
     let date = interaction.options.getString("fecha");
