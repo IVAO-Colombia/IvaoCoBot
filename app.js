@@ -92,21 +92,33 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
   async function createChannelTicket(department, roleDepartament) {
     let responseCreateEmbed = new EmbedBuilder()
-      .setColor("Random")
+      .setColor("#0D2C99")
       .setAuthor({
         name: "IVAO Colombia Tickets",
         iconURL: client.user.avatarURL(),
       })
       .setURL("https://co.ivao.aero")
-      .setDescription(
+
+      .setFooter({ text: "Puede cerrar el ticket dandole al boton" });
+
+    if ((roleDepartament = getRoles[18].id)) {
+      responseCreateEmbed.setDescription(
+        `
+        **RECUERDE**: No aceptamos reclamos por (MTL - AURORA - ALTITUDE)
+        **Departamento:** ${department} 
+      **Usuario:** ${interaction.member.nickname} 
+      ${ticketsMessages.descriptionResponseTicket}
+        `
+      );
+    } else {
+      responseCreateEmbed.setDescription(
         `
       **Departamento:** ${department} 
       **Usuario:** ${interaction.member.nickname} 
       ${ticketsMessages.descriptionResponseTicket}
-    `
-      )
-      .setFooter({ text: "Puede cerrar el ticket dandole al boton" });
-
+      `
+      );
+    }
     let closeResponseButton = new ButtonBuilder()
       .setCustomId("closeTicket")
       .setStyle(ButtonStyle.Danger)
@@ -156,11 +168,11 @@ client.on(Events.InteractionCreate, async (interaction) => {
         channelTicket.send({
           embeds: [responseCreateEmbed],
           components: [responseRowBuilder],
-        }),
-          interaction.reply({
-            content: `Su ticket se ha creado exitosamente ✅ ${channelTicket}`,
-            ephemeral: true,
-          });
+        });
+        interaction.reply({
+          content: `Su ticket se ha creado exitosamente ✅ ${channelTicket}`,
+          ephemeral: true,
+        });
       });
   }
 
