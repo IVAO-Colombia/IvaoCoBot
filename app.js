@@ -63,7 +63,7 @@ client.once(Events.ClientReady, async (bot) => {
     status: "dnd",
   });
   client.user.setActivity("Mantenimiento", {
-    type: ActivityType.Playing,
+    type: ActivityType.Watching,
   });
 });
 
@@ -101,7 +101,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
       .setFooter({ text: "Puede cerrar el ticket dandole al boton" });
 
-    if ((roleDepartament = getRoles[18].id)) {
+    if (roleDepartament == getRoles[18].id) {
       responseCreateEmbed.setDescription(
         `
         **RECUERDE**: No aceptamos reclamos por (MTL - AURORA - ALTITUDE)
