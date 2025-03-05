@@ -365,13 +365,15 @@ async function createAdvertisement(type, airport, date, time) {
 
 client.on(Events.InteractionCreate, async (interaction) => {
   if (interaction.commandName == "new-training") {
-    if (!interaction.member.roles.cache.has("1077610256890351656")) {
+    if (
+      !interaction.member.roles.cache.has("1077610256890351656") ||
+      !interaction.member.roles.cache.has("1077610256890351657")
+    ) {
       return interaction.reply({
         content: "You don't have permissions!",
         ephemeral: true,
       });
     }
-
     let airport = interaction.options.getString("dependencia");
     let time = interaction.options.getString("hora");
     let date = interaction.options.getString("fecha");
@@ -394,7 +396,10 @@ client.on(Events.InteractionCreate, async (interaction) => {
     }
   }
   if (interaction.commandName == "new-exam") {
-    if (!interaction.member.roles.cache.has("1077610256890351656")) {
+    if (
+      !interaction.member.roles.cache.has("1077610256890351656") ||
+      !interaction.member.roles.cache.has("1077610256890351657")
+    ) {
       return interaction.reply({
         content: "You don't have permissions!",
         ephemeral: true,
